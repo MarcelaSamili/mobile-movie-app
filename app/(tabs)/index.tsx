@@ -3,6 +3,7 @@ import SearchBar from '@/components/SearchBar';
 import { icons } from '@/constants/icons';
 import { images } from '@/constants/images';
 import { fetchMovies } from '@/services/api';
+import { getTrendingMovies } from '@/services/appwrite';
 import useFetch from '@/services/useFetch';
 import { Link, useRouter } from 'expo-router';
 import { useEffect } from 'react';
@@ -17,6 +18,12 @@ import {
 
 export default function Index() {
   const router = useRouter();
+
+  const {
+    data: treadingMovies,
+    loading: treadingLoading,
+    error: treadingError,
+  } = useFetch(getTrendingMovies);
 
   const {
     data: movies,
@@ -37,14 +44,14 @@ export default function Index() {
       >
         <Image source={icons.logo} className="w-12 h-10 mt-20 mb-5 mx-auto" />
 
-        {moviesLoading ? (
+        {moviesLoading || treadingLoading ? (
           <ActivityIndicator
             size="large"
             color="000ff"
             className="mt-10 self-center"
           />
-        ) : moviesError ? (
-          <Text>Error: {moviesError?.message}</Text>
+        ) : moviesError || treadingError ? (
+          <Text>Error: {moviesError?.message || treadingError?.message}</Text>
         ) : (
           <View className="flex-1 mt-5">
             <SearchBar
@@ -55,6 +62,14 @@ export default function Index() {
                 throw new Error('Function not implemented.');
               }}
             />
+
+            {treadingMovies && (
+              <View className="mt-10">
+                <Text className="text-lg text-white font-bold mb-3">
+                  Treading Movie
+                </Text>
+              </View>
+            )}
 
             <>
               <Text className="text-lg text-white font-bold mt-5 mb-3">

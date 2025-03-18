@@ -42,9 +42,9 @@ const Search = () => {
 
   /*------------------------------------------- */
   useEffect(() => {
-    updateSearchCount(searchQuery, movies[0]);
-    //if (searchQuery.trim() && movies.length > 0) {
-    //}
+    if (searchQuery.trim() && movies.length > 0) {
+      updateSearchCount(searchQuery, movies[0]);
+    }
   }, [movies]);
 
   /*---------------------------------------------*/
