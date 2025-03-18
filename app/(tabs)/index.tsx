@@ -1,5 +1,6 @@
 import MovieCard from '@/components/MovieCard';
 import SearchBar from '@/components/SearchBar';
+import TreadingCard from '@/components/TreadingCard';
 import { icons } from '@/constants/icons';
 import { images } from '@/constants/images';
 import { fetchMovies } from '@/services/api';
@@ -54,6 +55,7 @@ export default function Index() {
           <Text>Error: {moviesError?.message || treadingError?.message}</Text>
         ) : (
           <View className="flex-1 mt-5">
+            {/*---------------------------------------------------------*/}
             <SearchBar
               onPress={() => router.push('/search')}
               placeholder="Search for a movie"
@@ -62,15 +64,29 @@ export default function Index() {
                 throw new Error('Function not implemented.');
               }}
             />
+            {/*------------------------------------------------------------*/}
 
             {treadingMovies && (
               <View className="mt-10">
                 <Text className="text-lg text-white font-bold mb-3">
                   Treading Movie
                 </Text>
+
+                <FlatList
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                  ItemSeparatorComponent={() => <View className="w-5" />}
+                  className="mb-4 mt-3"
+                  data={treadingMovies}
+                  renderItem={({ item, index }) => (
+                    <TreadingCard movie={item} index={index} />
+                  )}
+                  keyExtractor={item => item.movie_id.toString()}
+                />
               </View>
             )}
 
+            {/*------------------------------------------------------------*/}
             <>
               <Text className="text-lg text-white font-bold mt-5 mb-3">
                 Latest Movies
@@ -90,6 +106,7 @@ export default function Index() {
                 scrollEnabled={false}
               />
             </>
+            {/*------------------------------------------------------------*/}
           </View>
         )}
       </ScrollView>

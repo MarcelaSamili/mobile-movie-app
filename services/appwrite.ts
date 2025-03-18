@@ -4,14 +4,6 @@ import { Client, Databases, ID, Query } from 'react-native-appwrite';
 const DATABASE_ID = process.env.EXPO_PUBLIC_APPWRITE_DATABASE_ID!;
 const COLLECTION_ID = process.env.EXPO_PUBLIC_APPWRITE_COLLECTION_ID!;
 
-/*console.log('DATABASE_ID:', DATABASE_ID);
-console.log('COLLECTION_ID:', COLLECTION_ID);
-console.log('PROJECT_ID:', process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID);
-
-fetch('https://cloud.appwrite.io/v1')
-  .then(response => console.log('Conexão bem-sucedida:', response))
-  .catch(error => console.error('Erro de conexão:', error));*/
-
 const client = new Client()
   .setEndpoint('https://cloud.appwrite.io/v1')
   .setProject(process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!);
@@ -54,6 +46,8 @@ export const updateSearchCount = async (query: string, movie: Movie) => {
     );
   }
 };
+
+/*-------------------------------------------------------------------- */
 
 export const getTrendingMovies = async (): Promise<
   TrendingMovie[] | undefined
