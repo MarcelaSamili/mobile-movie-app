@@ -1,10 +1,14 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 
 const MovieDetails = () => {
   return (
-    <View>
-      <Text></Text>
+    <View className="bg-primary flex-1">
+      <ScrollView contentContainerStyle={{}}>
+        <View>
+          <Image />
+        </View>
+      </ScrollView>
     </View>
   );
 };
