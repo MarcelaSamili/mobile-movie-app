@@ -27,7 +27,7 @@ export default function Index() {
   } = useFetch(getTrendingMovies);
 
   const {
-    data: movies,
+    data: movie,
     loading: moviesLoading,
     error: moviesError,
   } = useFetch(() =>
@@ -69,7 +69,7 @@ export default function Index() {
             {treadingMovies && (
               <View className="mt-10">
                 <Text className="text-lg text-white font-bold mb-3">
-                  Treading Movie
+                  Treading Movies
                 </Text>
 
                 <FlatList
@@ -92,7 +92,7 @@ export default function Index() {
                 Latest Movies
               </Text>
               <FlatList
-                data={movies}
+                data={movie}
                 renderItem={({ item }) => <MovieCard {...item} />}
                 keyExtractor={item => item.id.toString()}
                 numColumns={3}
