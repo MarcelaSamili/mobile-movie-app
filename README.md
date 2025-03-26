@@ -1,50 +1,39 @@
-# Welcome to your Expo app 👋
+## About the APP
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is an application that allows you to search, save and learn more about the movies you are looking for.
+It was developed using React Native, expo, TailwindCss and appwarite for the back end, my purpose with this project was to learn React Native.
 
-## Get started
+# Get-Start
+1-To test it, you can clone the code here from git-hub, open it in vs code or another development platform, and install expo on your smartphone.
 
-1. Install dependencies
+2-Configure the .env file
+like this:
+ - EXPO_PUBLIC_MOVIE_API_KEY="API key"
 
-   ```bash
-   npm install
-   ```
+ - EXPO_PUBLIC_MOVIE_API_BEARER="API token"
 
-2. Start the app
+You can get these two credentials by signing up on the API website: https://developer.themoviedb.org/reference/intro/getting-started
+------------------------
 
-   ```bash
-    npx expo start
-   ```
+ - EXPO_PUBLIC_APPWRITE_PROJECT_ID="AppWrite project ID"
 
-In the output, you'll find options to open the app in a
+ - EXPO_PUBLIC_APPWRITE_DATABASE_ID="Database ID"
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+ - EXPO_PUBLIC_APPWRITE_COLLECTION_ID="Collection ID"
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+You can find these credentials by signing up on appWrite: https://appwrite.io/
 
-## Get a fresh project
+In your database collection, you must create these attributes:
+searchTerm - string
+count - integer
+poster_url - url
+movie_id - integer
+title - string
 
-When you're ready, run:
+still in your bank collection, go to settings and enable the Create Read Update Delete permissions.
 
-```bash
-npm run reset-project
-```
+# I learned this app from this: teacher:https://www.youtube.com/watchv=f8Z9JyB2EIE&list=PLVhuGNM7c34YcAJMFgOVZjcgCGyfSGNWQ&index=16&ab_channel=JavaScriptMastery
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+All credits to him.
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+If you have any questions, I am at your disposal.
