@@ -23,11 +23,11 @@ You can fide de appwrite credentials making a lognIn in the aplication of appWri
 
 ## Appwrite Database configuration
 In your database collection, you must create these attributes:
-searchTerm - string
-count - integer
-poster_url - url
-movie_id - integer
-title - string
+ - searchTerm - string
+ - count - integer
+ - poster_url - url
+ - movie_id - integer
+ - title - string
 
 still in your bank collection, go to settings and enable the Create Read Update Delete permissions.
 
