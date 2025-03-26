@@ -11,16 +11,17 @@ like this:
  - EXPO_PUBLIC_MOVIE_API_KEY="API key"
 
  - EXPO_PUBLIC_MOVIE_API_BEARER="API token"
-You can get these two credentials by signing up on the API website: https://developer.themoviedb.org/reference/intro/getting-started)
-------------------------------------------
 
  - EXPO_PUBLIC_APPWRITE_PROJECT_ID="AppWrite project ID"
 
  - EXPO_PUBLIC_APPWRITE_DATABASE_ID="Database ID"
 
  - EXPO_PUBLIC_APPWRITE_COLLECTION_ID="Collection ID"
-You can find these credentials by signing up on appWrite: https://appwrite.io/
 
+You can fide the API credentials here: https://developer.themoviedb.org/reference/intro/getting-started)
+You can fide de appwrite credentials making a lognIn in the aplication of appWrite: https://appwrite.io/
+
+## Appwrite Database configuration
 In your database collection, you must create these attributes:
 searchTerm - string
 count - integer
